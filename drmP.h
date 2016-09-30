@@ -1,7 +1,7 @@
 /**
- * \file drmP.h 
+ * \file drmP.h
  * Private header for Direct Rendering Manager
- * 
+ *
  * \author Rickard E. (Rik) Faith <faith@valinux.com>
  * \author Gareth Hughes <gareth@valinux.com>
  */
@@ -65,12 +65,7 @@
 #include <asm/io.h>
 #include <asm/mman.h>
 #include <asm/uaccess.h>
-#if LINUX_VERSION_CODE >= KERNEL_VERSION(4,3,0)
 #undef CONFIG_MTRR
-#endif
-#ifdef CONFIG_MTRR
-#include <asm/mtrr.h>
-#endif
 #if defined(CONFIG_AGP) || defined(CONFIG_AGP_MODULE)
 #include <linux/types.h>
 #include <linux/agp_backend.h>
@@ -167,7 +162,7 @@
 #define DRM_MEM_CTXLIST  21
 
 #define DRM_MAX_CTXBITMAP (PAGE_SIZE * 8)
-	
+
 /*@}*/
 
 
@@ -202,7 +197,7 @@
 #define drm_flags                           __ke_moduleflags
 /**
  * Debug output.
- * 
+ *
  * \param fmt printf() like format string.
  * \param arg arguments
  */
@@ -498,12 +493,12 @@ typedef struct drm_device_dma {
 } drm_device_dma_t;
 
 #if __REALLY_HAVE_AGP
-/** 
+/**
  * AGP memory entry.  Stored as a doubly linked list.
  */
 typedef struct drm_agp_mem {
 	unsigned long      handle;	/**< handle */
-	DRM_AGP_MEM        *memory;	
+	DRM_AGP_MEM        *memory;
 	unsigned long      bound;	/**< address */
 	int                pages;
 	struct drm_agp_mem *prev;	/**< previous entry */
@@ -647,7 +642,7 @@ typedef struct drm_device {
 	int		  last_context;	/**< Last current context */
 	unsigned long	  last_switch;	/**< jiffies at last context switch */
 	/*@}*/
-	
+
 #if !HAS_WORKQUEUE
 	struct tq_struct  tq;
 #else
@@ -920,10 +915,10 @@ extern int            DRM(ati_pcigart_cleanup)(drm_device_t *dev,
 					       unsigned long addr,
 					       dma_addr_t bus_addr);
 
-extern void	      *DRM(pci_alloc)(drm_device_t *dev, size_t size, 
+extern void	      *DRM(pci_alloc)(drm_device_t *dev, size_t size,
 					size_t align, dma_addr_t maxaddr,
 					dma_addr_t *busaddr);
-extern void	      DRM(pci_free)(drm_device_t *dev, size_t size, 
+extern void	      DRM(pci_free)(drm_device_t *dev, size_t size,
 					void *vaddr, dma_addr_t busaddr);
 
 /*@}*/
