@@ -1,0 +1,55 @@
+AMD kernel module generator version 2.1
+.
+Active kernel:
+uname -a = Linux proxmox 4.4.8-1-pve #1 SMP Tue May 31 07:12:32 CEST 2016 x86_64 GNU/Linux
+uname -s = Linux
+uname -m = x86_64
+uname -r = 4.4.8-1-pve
+uname -v = #1 SMP Tue May 31 07:12:32 CEST 2016
+.
+Target kernel:
+uname -a = Linux proxmox 4.4.8-1-pve #1 SMP Tue May 31 07:12:32 CEST 2016 x86_64 GNU/Linux
+uname -s = Linux
+uname -m = x86_64
+uname -r = 4.4.8-1-pve
+uname -v = #1 SMP Tue May 31 07:12:32 CEST 2016
+.
+OsVersion says: SMP=1
+file /proc/kallsyms says: SMP=1
+file /lib/modules/4.4.8-1-pve/build/include/generated/autoconf.h says: SMP=1
+file /lib/modules/4.4.8-1-pve/build/include/generated/autoconf.h says: MODVERSIONS=1
+file /lib/modules/4.4.8-1-pve/build/arch/x86/include/asm/compat.h says: COMPAT_ALLOC_USER_SPACE=arch_compat_alloc_user_space
+.
+doing Makefile based build for kernel 2.6.x and higher
+make -C /lib/modules/4.4.8-1-pve/build SUBDIRS=/home/leonardo/fglrx-install.WhxbxD/common/lib/modules/fglrx/build_mod/2.6.x modules
+make[1]: Entering directory '/usr/src/linux-headers-4.4.8-1-pve'
+  CC [M]  /home/leonardo/fglrx-install.WhxbxD/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.o
+/home/leonardo/fglrx-install.WhxbxD/common/lib/modules/fglrx/build_mod/2.6.x/firegl_public.c:6437:12: warning: 'KCL_fpu_save_init' defined but not used [-Wunused-function]
+ static int KCL_fpu_save_init(struct task_struct *tsk)
+            ^
+  CC [M]  /home/leonardo/fglrx-install.WhxbxD/common/lib/modules/fglrx/build_mod/2.6.x/kcl_acpi.o
+  CC [M]  /home/leonardo/fglrx-install.WhxbxD/common/lib/modules/fglrx/build_mod/2.6.x/kcl_agp.o
+  CC [M]  /home/leonardo/fglrx-install.WhxbxD/common/lib/modules/fglrx/build_mod/2.6.x/kcl_debug.o
+  CC [M]  /home/leonardo/fglrx-install.WhxbxD/common/lib/modules/fglrx/build_mod/2.6.x/kcl_ioctl.o
+  CC [M]  /home/leonardo/fglrx-install.WhxbxD/common/lib/modules/fglrx/build_mod/2.6.x/kcl_io.o
+  CC [M]  /home/leonardo/fglrx-install.WhxbxD/common/lib/modules/fglrx/build_mod/2.6.x/kcl_pci.o
+  CC [M]  /home/leonardo/fglrx-install.WhxbxD/common/lib/modules/fglrx/build_mod/2.6.x/kcl_str.o
+  CC [M]  /home/leonardo/fglrx-install.WhxbxD/common/lib/modules/fglrx/build_mod/2.6.x/kcl_iommu.o
+  CC [M]  /home/leonardo/fglrx-install.WhxbxD/common/lib/modules/fglrx/build_mod/2.6.x/kcl.o
+  CC [M]  /home/leonardo/fglrx-install.WhxbxD/common/lib/modules/fglrx/build_mod/2.6.x/kcl_wait.o
+  LD [M]  /home/leonardo/fglrx-install.WhxbxD/common/lib/modules/fglrx/build_mod/2.6.x/fglrx.o
+  Building modules, stage 2.
+  MODPOST 1 modules
+WARNING: "mtrr_add" [/home/leonardo/fglrx-install.WhxbxD/common/lib/modules/fglrx/build_mod/2.6.x/fglrx.ko] undefined!
+WARNING: "mtrr_del" [/home/leonardo/fglrx-install.WhxbxD/common/lib/modules/fglrx/build_mod/2.6.x/fglrx.ko] undefined!
+  CC      /home/leonardo/fglrx-install.WhxbxD/common/lib/modules/fglrx/build_mod/2.6.x/fglrx.mod.o
+  LD [M]  /home/leonardo/fglrx-install.WhxbxD/common/lib/modules/fglrx/build_mod/2.6.x/fglrx.ko
+make[1]: Leaving directory '/usr/src/linux-headers-4.4.8-1-pve'
+build succeeded with return value 0
+.
+duplicating results into driver repository...
+target location: /home/leonardo/fglrx-install.WhxbxD/common/lib/modules/fglrx
+the debug info stripped from the kernel module
+copying fglrx.ko
+copying logfile of build
+*** end of build log ***
