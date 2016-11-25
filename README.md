@@ -16,6 +16,12 @@ Install steps
 ./AMD-Catalyst-15.9-Linux-installer-15.201.1151-x86.x86_64.run --extract
 ```
 
+Optional, uninstall the driver is was already present with:
+
+```bash
+sudo aticonfig --uninstall
+```
+
 2 . Clone patched code
 
 ```bash
